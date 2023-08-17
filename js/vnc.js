@@ -1,9 +1,20 @@
 $(document).ready(function(){
 
   // fullPage
+  if($(window).width() < 1441){
+    $('section').addClass('fp-auto-height-responsive');
+    }
+  $(window).resize(function(){
+    if(($(window).width() < 1441)){
+      $('section').addClass('fp-auto-height-responsive');
+    } else {
+      $('section').removeClass('fp-auto-height-responsive');
+    }
+  });
   $('#fullpage').fullpage({
     verticalCentered: false,
-    responsiveWidth: 1441
+    responsiveWidth: 1441,
+    bigSectionsDestination: top
   });
 
   // swiper

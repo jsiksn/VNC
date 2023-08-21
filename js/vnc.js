@@ -19,8 +19,18 @@ $(document).ready(function(){
 
   // swiper
   var swiper = new Swiper(".portfolio", {
-    slidesPerView: 5,
+    slidesPerView: 2,
     spaceBetween: 20,
+    breakpoints: {
+      1025: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      },
+      761: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    },
     pagination: {
       el: ".swiper-pagination",
       type: "fraction",
@@ -28,7 +38,7 @@ $(document).ready(function(){
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
-    },
+    }
   });
 
 }); // ready

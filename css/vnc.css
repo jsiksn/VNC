@@ -6,7 +6,7 @@
 .section-wrap {
   position: relative;
   height: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -35,19 +35,22 @@
 }
 
 .btn-link {
-  display: flex;
+  display: inline-block;
   gap: 0.5rem;
-  padding-top: 3.125rem;
+  margin-top: 2.125rem;
+  padding: 1rem 1rem 1rem 0;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.375rem;
 }
 .btn-link::after {
   content: "";
-  display: block;
+  display: inline-block;
   width: 1.375rem;
   height: 1.375rem;
+  margin-left: 0.6rem;
   background: url(../image/icon/arrow-next.png) no-repeat center center/contain;
+  vertical-align: middle;
 }
 
 html, body {
@@ -69,7 +72,6 @@ header {
 }
 header .header-wrap {
   justify-content: flex-start;
-  position: relative;
 }
 header .header-wrap h1 a {
   width: auto;
@@ -78,8 +80,7 @@ header .header-wrap h1 a {
 header .header-wrap h1 a img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 header .header-wrap nav {
   padding-left: calc((100% - 180px) / 10 * 4 + 80px - 71px);
@@ -171,10 +172,10 @@ main .about .section-wrap .service {
   gap: 20px;
 }
 main .about .section-wrap .service li {
-  width: 100%;
   padding: 2rem 2rem 0;
   border-top: 2px solid #afafaf;
   color: #afafaf;
+  box-sizing: border-box;
 }
 main .about .section-wrap .service li p {
   padding-top: 1rem;
@@ -243,6 +244,20 @@ main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide {
   box-sizing: border-box;
   transition: all 0.5s;
 }
+main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: multiply;
+  background: url(../image/project/project_01.jpg) no-repeat center center/cover, rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
 main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide em {
   font-size: 0.875rem;
 }
@@ -277,10 +292,11 @@ main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide .btn-view::
   transition: all 0.5s;
 }
 main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide:hover {
-  background: url(../image/project/project_01.jpg) no-repeat center center/cover, rgba(0, 0, 0, 0.3);
-  background-blend-mode: multiply;
   box-shadow: -1.25rem 1.25rem 2.5rem rgba(0, 0, 0, 0.2);
   color: #fff;
+}
+main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide:hover::after {
+  opacity: 1;
 }
 main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide:hover h3::after {
   background: #fff;
@@ -373,7 +389,7 @@ main .contact .section-wrap .info-wrap address dl {
   display: grid;
   gap: 2rem 20px;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: "a a b b e" "c c d d e";
+  grid-template-areas: "a a b b b" "c c d d d";
 }
 main .contact .section-wrap .info-wrap address dl div:first-child {
   grid-area: a;
@@ -438,4 +454,133 @@ main .contact .section-wrap .info-wrap .copy {
     padding-bottom: 8.5vh;
   }
   /* main */
-} /* 1440px *//*# sourceMappingURL=vnc.css.map */
+} /* 1440px */
+@media screen and (max-width: 1200px) {
+  html, body {
+    font-size: 14px;
+  }
+} /* 1200px */
+@media screen and (max-width: 1024px) {
+  .tit {
+    font-size: 4rem;
+  }
+  /* header */
+  header {
+    height: 3.75rem;
+  }
+  header .header-wrap nav {
+    display: none;
+  }
+  /* header */
+  /* main */
+  main {
+    /* about */
+    /* about */
+    /* project */
+    /* project */
+  }
+  main .about .section-wrap .number {
+    font-size: 45vh;
+  }
+  main .project .section-wrap {
+    padding-top: 10.5vh;
+  }
+  main .project .section-wrap .detail {
+    flex-direction: row;
+    height: auto;
+  }
+  main .project .section-wrap .detail ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  main .project .section-wrap .detail ul li p {
+    display: none;
+  }
+  /* main */
+} /* 1024px */
+@media screen and (max-width: 760px) {
+  .text-wrap {
+    position: static;
+    width: 100%;
+  }
+  /* main */
+  main {
+    /* home */
+    /* home */
+    /* about */
+    /* about */
+    /* project */
+    /* project */
+    /* contact */
+  }
+  main .home .section-wrap {
+    padding-top: 16vh;
+    padding-bottom: 8.5vh;
+  }
+  main .home .section-wrap .text-wrap {
+    padding-top: 10vh;
+  }
+  main .about .section-wrap {
+    padding-top: 8.5vh;
+  }
+  main .about .section-wrap .number {
+    font-size: 16rem;
+  }
+  main .about .section-wrap .service {
+    flex-direction: column;
+  }
+  main .about .section-wrap .service li {
+    width: 100%;
+  }
+  main .project .section-wrap {
+    padding-top: 8.5vh;
+  }
+  main .project .section-wrap .detail {
+    width: 100%;
+    margin: 5.5vh 0 0;
+  }
+  main .project .section-wrap .portfolio {
+    padding-top: 5.5vh;
+    /* swiper-wrapper */
+  }
+  main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide {
+    color: #fff;
+  }
+  main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide::after {
+    opacity: 1;
+  }
+  main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide h3::after {
+    background: #fff;
+  }
+  main .project .section-wrap .portfolio .swiper-wrapper .swiper-slide .btn-view::after {
+    background: url(../image/icon/arrow_w.png) no-repeat center center/contain;
+  }
+  main .project .section-wrap .portfolio .swiper-button.swiper-button-prev {
+    left: 10px;
+  }
+  main .project .section-wrap .portfolio .swiper-button.swiper-button-next {
+    right: 10px;
+  }
+  main .project .section-wrap .portfolio .swiper-pagination {
+    top: auto;
+    bottom: 2.5vh;
+    transform: rotate(0);
+  }
+  main .project .section-wrap .portfolio .swiper-pagination::after {
+    display: none;
+  }
+  main .contact .section-wrap {
+    padding-top: 8.5vh;
+  }
+  main .contact .section-wrap .info-wrap {
+    padding-left: 0;
+  }
+  main .contact .section-wrap .info-wrap address::before {
+    margin-bottom: 3rem;
+  }
+  main .contact .section-wrap .info-wrap address dl {
+    gap: 2rem;
+    grid-template-areas: "a a a a a" "b b b b b" "d d d d d" "c c c c c";
+  }
+  /* main */
+} /* 760px */

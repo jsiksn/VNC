@@ -17,7 +17,23 @@ $(document).ready(function(){
     bigSectionsDestination: top
   });
 
-  // swiper
+  // count about 
+  /* let scrollVh12 = $(window).innerHeight() * 1 / 2;
+  let event12 = $('.number').offset().top - scrollVh12;
+  let num = 0;
+  $(window).scroll(function(){
+    if($(this).scrollTop() > event12){
+      setInterval(count(), 100);
+    }
+  });
+  function count(){
+    if (num < 13){
+      num++;
+      $('.number').text(num);
+    }
+  }; */ 
+
+  // swiper portfolio
   var swiper = new Swiper(".portfolio", {
     slidesPerView: 2,
     spaceBetween: 20,
